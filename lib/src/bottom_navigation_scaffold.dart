@@ -1,22 +1,22 @@
 import 'package:bottom_navigation_scaffold/src/page_detail.dart';
 import 'package:flutter/material.dart';
 
-typedef BottomNNavigationBarBuilder<T> = Widget Function(BuildContext context,
+typedef BottomNavigationBarBuilder<T> = Widget Function(BuildContext context,
     List<T> tabs, int currentIndex, void Function(int) signalUpdateScaffold);
 
 class BottomNavigationScaffold<T> extends StatefulWidget {
   final List<PageDetail<T>> pageDetails;
-  final BottomNNavigationBarBuilder<T> bottomNNavigationBarBuilder;
+  final BottomNavigationBarBuilder<T> bottomNavigationBarBuilder;
 
   const BottomNavigationScaffold(
-      {Key key, this.pageDetails, this.bottomNNavigationBarBuilder})
+      {Key key, this.pageDetails, this.bottomNavigationBarBuilder})
       : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
     return _BottomNavigationScaffoldState(
         pageDetails: this.pageDetails,
-        bottomNNavigationBarBuilder: bottomNNavigationBarBuilder);
+        bottomNavigationBarBuilder: bottomNavigationBarBuilder);
   }
 }
 
@@ -41,14 +41,14 @@ class _AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
 class _BottomNavigationScaffoldState<T>
     extends State<BottomNavigationScaffold> {
   final List<PageDetail<T>> pageDetails;
-  final BottomNNavigationBarBuilder bottomNNavigationBarBuilder;
+  final BottomNavigationBarBuilder bottomNavigationBarBuilder;
 
   List<Widget> _pages;
   List<T> _tabs;
 
   _BottomNavigationScaffoldState(
       {@required this.pageDetails,
-      @required this.bottomNNavigationBarBuilder}) {
+      @required this.bottomNavigationBarBuilder}) {
     _pages = pageDetails.map((e) => e.page).toList();
     _tabs = pageDetails.map((e) => e.tab).toList();
   }
@@ -74,7 +74,7 @@ class _BottomNavigationScaffoldState<T>
               },
               child: pageDetails[_currentIndex].floatingActionButton,
             ),
-            bottomNavigationBar: this.bottomNNavigationBarBuilder(
+            bottomNavigationBar: this.bottomNavigationBarBuilder(
               context,
               _tabs,
               _currentIndex,

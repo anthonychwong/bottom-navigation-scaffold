@@ -28,7 +28,7 @@ import 'package:bottom_navigation_scaffold/bottom_navigation_scaffold.dart';
 // usually in build method
 
   return BottomNavigationScaffold(
-    bottomNNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){},
+    bottomNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){},
     pageDetails: [],
   );
 ```
@@ -77,7 +77,7 @@ pageDetails: [
 If not using the tab bar widget, remember to call the method `signalUpdate` to refresh the floating action button and app bar.
 
 ```dart
-bottomNNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
+bottomNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
   return BottomNavigationBar(
     onTap: (i) => signalUpdate(i),
     items: tabs,

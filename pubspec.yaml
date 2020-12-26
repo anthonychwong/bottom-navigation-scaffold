@@ -2,7 +2,7 @@ name: bottom_navigation_scaffold
 description: Build bottom navigation layout easier.
 repository: https://github.com/anthonychwong/bottom-navigation-scaffold
 homepage: https://anthonychwong.netlify.app/
-version: 0.0.1-rc1
+version: 0.0.1-rc2
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

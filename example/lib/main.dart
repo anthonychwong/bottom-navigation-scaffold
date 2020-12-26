@@ -19,7 +19,7 @@ class RootWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationScaffold(
-      bottomNNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
+      bottomNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
         return BottomNavigationBar(
           onTap: (i) => signalUpdate(i),
           items: tabs,
