@@ -1,11 +1,14 @@
 # bottom_navigation_scaffold
 
+[![Pub Version](https://img.shields.io/pub/v/bottom_navigation_scaffold)](https://pub.dev/packages/bottom_navigation_scaffold)
+
 Build bottom navigation layout easier.
 
 Feature
 - Manage bottom navigation status, e.g. page selection, holding page and corresponding elements, etc.
 - Swip to change page
 - Provide (seems to be) more material style element transistion
+- Compatible with other bottom navigation bar
 
 ## Preview
 
@@ -79,7 +82,7 @@ If not using the tab bar widget, remember to call the method `signalUpdate` to r
 ```dart
 bottomNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
   return BottomNavigationBar(
-    onTap: (i) => signalUpdate(i),
+    onTap: signalUpdate,
     items: tabs,
     currentIndex: currentIndex,
   );
@@ -88,8 +91,12 @@ bottomNavigationBarBuilder: (context, tabs, currentIndex, signalUpdate){
 
 > ⚠ Since this comes with a scaffold, do not add your own scaffold, or you will run into multi-scaffold troubles.
 
+## Use with other bottom navigation bars
+
+The default bottom navigation bar is too boring? No problem, you can easily use the other bar as these ([examples](https://anthonychwong.netlify.app/notes/material-bottom-navigation-scaffold/#use-with-other-bottom-navigation-bar))
+
 ## TODO
 
 - [ ] Unit tests
 - [ ] Toggle bottom navigation bar visibility
-- [ ] Expose selected index properly
+- [ ] Document library
